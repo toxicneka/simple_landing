@@ -85,6 +85,12 @@ body::after {
     display: flex;
     flex-direction: column;
     min-height: 200px;
+    transition: 0.2s ease-in;
+}
+
+.wrapper-service .box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 }
 
 .box i {
@@ -553,7 +559,15 @@ body::after {
     border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     border-radius: 25px;
+    transition: .2s ease;
 }
+
+.price-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+
 
 .card_title {
     font-weight: normal;
@@ -593,11 +607,13 @@ a.cta_btn {
     color: white;
     text-decoration: none;
     letter-spacing: 2px;
-    transition: background .3s ease;
+    transition: background .2s ease, transform .3s ease-in-out;
 }
 
 a.cta_btn:hover {
     background: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 }
 .link {
     position: fixed;
