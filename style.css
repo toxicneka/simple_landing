@@ -16,7 +16,6 @@ body {
     background: url('https://cdnb.artstation.com/p/assets/images/images/022/771/651/medium/jessica-woulfe-shot2paintv12.jpg?1576627873') no-repeat fixed;
     background-size: cover;
     background-position: center;
-
 }
 
 header {
@@ -45,7 +44,6 @@ header {
     transition: 0.3s ease-in-out;
 }
 
-/* Затемнить фон для лучшего контраста */
 body::after {
     content: '';
     position: fixed;
@@ -64,13 +62,12 @@ body::after {
     margin-top: 50px;
     min-height: 100vh;
     padding: 20px 9%;
-    /* background: linear-gradient(to right, #e2e2e2, #c9d6ff); */
     color: #333;
     text-align: center;
 }
 
 .service .heading {
-    font-size: 60px;
+    font-size: 40px;
     margin-bottom: 20px;
     color: #ffffff;
 }
@@ -79,7 +76,6 @@ body::after {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 100px;
-    margin-top: 50px;
 }
 
 .wrapper-service .box {
@@ -319,11 +315,6 @@ body::after {
     transition: 0.5s;
 }
 
-/* .input-box input:focus~label,
-.input-box input:valid~label {
-    top: -5px;
-} */
-
 .input-box.filled label {
     top: -5px !important;
     transform: translateY(0) scale(0.9) !important;
@@ -406,4 +397,274 @@ body::after {
 
 .login-register p a:hover {
     text-decoration: underline;
+}
+
+/* Testimonial Section Styles */
+.testimonial__area {
+    padding: 100px 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    margin-top: 50px;
+    color: #fff;
+}
+
+.wrapper-testimonial {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.testimonial__card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 80px 40px 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    margin: 30px 10px;
+    min-height: 300px;
+    transition: transform 0.3s ease;
+}
+
+.testimonial__card:hover {
+    transform: translateY(-10px);
+}
+
+.customer__quotes {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 400;
+    max-width: 800px;
+}
+
+.customer__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+.customer__info {
+    margin-top: 20px;
+}
+
+.customer__name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.customer__role {
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.btn__group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.btn__prev, .btn__next {
+    cursor: pointer;
+    transition: transform 0.3s;
+    background: transparent;
+    border: none;
+    color: #fff;
+}
+
+.btn__prev:hover, .btn__next:hover {
+    transform: scale(1.1);
+}
+
+.quote__icon i {
+    font-size: 40px;
+    opacity: 0.5;
+    color: #fff;
+}
+
+/* Swiper Styles */
+.testimonial__card--group {
+    padding: 20px 0;
+}
+
+.swiper-slide {
+    height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 30px;
+    }
+    
+    .navigation a {
+        margin-left: 20px;
+    }
+    
+    .content h1 {
+        font-size: 40px;
+    }
+    
+    .content p {
+        font-size: 18px;
+    }
+    
+    .service .wrapper-service {
+        gap: 30px;
+    }
+    
+    .testimonial__card {
+        padding: 60px 20px 30px;
+    }
+    
+    .customer__quotes {
+        font-size: 16px;
+    }
+}
+
+
+
+
+.price {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4%;
+    padding: 12% 0;
+}
+
+.price-card {
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+}
+
+.card_title {
+    font-weight: normal;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.pricing {
+    font-weight: normal;
+    font-size: 96px;
+}
+
+.pricing .small {
+    font-size: 16px;
+}
+
+hr {
+    margin-top: 70px;
+}
+
+.price-features {
+    margin: 40px 0;
+    list-style-position: inside;
+}
+
+.price-features li {
+    padding-bottom: 10px;
+}
+
+a.cta_btn {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    background: rgba(21, 23, 24, 0.7);
+    border-radius: 29px;
+    padding: 20px 0;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: background .3s ease;
+}
+
+a.cta_btn:hover {
+    background: #000;
+}
+.link {
+    position: fixed;
+    background-color: #D12322;
+    padding: 23px 40px;
+    right: -99px;
+    border-radius: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: rotate(-90deg);
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFF;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .1s ease-in-out;
+}
+
+.link i {
+    padding-left: 7px;
+}
+
+.link:hover {
+    text-decoration: underline;
+    background-color: black;
+}
+@media only screen and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2%;
+
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2%;
+        padding-bottom: 25%;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 30px;
+    }
+
+    .card_title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .pricing {
+        font-size: 52px;
+    }
+
+    hr {
+        margin-top: 50px;
+    }
+
+    a.cta_btn {
+        font-size: 11px;
+    }
 }
