@@ -5,28 +5,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnPopup = document.querySelector('.btnLogin-popup');
     const iconClose = document.querySelector('.icon-close');
 
-    // Initialize Swiper
-    const testimonialSwiper = new Swiper(".testimonial", {
-        speed: 400,
-        loop: true,
-        spaceBetween: 30,
-        slidesPerView: 1,
-        centeredSlides: true,
-        navigation: {
-            nextEl: ".btn__next",
-            prevEl: ".btn__prev"
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 30
-            },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 40
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
             }
-        }
+        });
     });
+    
+  // Initialize Swiper
+  const testimonialSwiper = new Swiper(".testimonial-swiper", {
+    speed: 400,
+    loop: true,
+    spaceBetween: 30,
+    navigation: {
+        nextEl: ".btn-next",
+        prevEl: ".btn-prev"
+    }
+});
 
     function updateLabelsPosition() {
         const inputs = wrapper.querySelectorAll('input');
@@ -90,6 +91,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.parentElement.classList.add('filled');
             } else {
                 this.parentElement.classList.remove('filled');
+            }
+        });
+    });
+    document.querySelectorAll('.faq .item').forEach(item => {
+        const question = item.querySelector('.question');
+        question.addEventListener('click', () => {
+            item.classList.toggle('active');
+            
+            // Закрываем другие открытые элементы
+            if (item.classList.contains('active')) {
+                document.querySelectorAll('.faq .item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
             }
         });
     });
