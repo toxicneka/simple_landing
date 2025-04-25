@@ -7,6 +7,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     display: block;
     min-height: 100vh;
@@ -17,7 +21,7 @@ body {
     background-size: cover;
     background-position: center;
 }
-
+/* Header */
 header {
     position: fixed;
     top: 0;
@@ -53,81 +57,6 @@ body::after {
     height: 100%;
     background: rgba(0, 0, 0, 0.3);
     z-index: -1;
-}
-
-.service {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 50px;
-    min-height: 100vh;
-    padding: 20px 9%;
-    color: #333;
-    text-align: center;
-}
-
-.service .heading {
-    font-size: 40px;
-    margin-bottom: 20px;
-    color: #ffffff;
-}
-
-.service .wrapper-service {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 100px;
-}
-
-.wrapper-service .box {
-    padding: 30px 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    min-height: 200px;
-    transition: 0.2s ease-in;
-}
-
-.wrapper-service .box:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-}
-
-.box i {
-    font-size: 60px;
-    color: #162938;
-}
-
-.box h2 {
-    font-size: 25px;
-}
-
-.box p {
-    margin: 10px 0 18px;
-}
-
-.box .btn {
-    display: inline-block;
-    font-weight: 500;
-    margin-top: auto;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px 30px;
-    background: #162938;
-    color: #fff;
-    cursor: pointer;
-    border: 2px solid #162938;
-    outline: none;
-    border-radius: 6px;
-    font-weight: 500;
-    text-decoration: none;
-    transition: 0.4s;
-}
-
-.box .btn:hover {
-    background: transparent;
-    color: #162938;
 }
 
 .content {
@@ -215,9 +144,11 @@ body::after {
     background: #fff;
     color: #162938;
 }
-
+/* Popup */
 .wrapper {
-    position: absolute;
+    position: fixed;
+    top: 30%;
+    left: 40%;
     width: 400px;
     height: 440px;
     background: transparent;
@@ -231,6 +162,7 @@ body::after {
     overflow: hidden;
     transform: translateY(-100vh);
     opacity: 0;
+    z-index: 5;
     transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), 
                 opacity 0.3s ease,
                 height 0.2s ease-in-out;
@@ -405,13 +337,87 @@ body::after {
     text-decoration: underline;
 }
 
-/* Testimonial Section Styles */
-.testimonial__area {
-    padding: 100px 0;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
+/* Service */
+.service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-top: 50px;
+    min-height: 100vh;
+    padding: 20px 9%;
+    color: #333;
+    text-align: center;
+}
+
+.service .heading {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.service .wrapper-service {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 100px;
+}
+
+.wrapper-service .box {
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    transition: 0.2s ease-in;
+}
+
+.wrapper-service .box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+}
+
+.box i {
+    font-size: 60px;
+    color: #162938;
+}
+
+.box h2 {
+    font-size: 25px;
+}
+
+.box p {
+    margin: 10px 0 18px;
+}
+
+.box .btn {
+    display: inline-block;
+    font-weight: 500;
+    margin-top: auto;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 30px;
+    background: #162938;
     color: #fff;
+    cursor: pointer;
+    border: 2px solid #162938;
+    outline: none;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.box .btn:hover {
+    background: transparent;
+    color: #162938;
+}
+
+/* Testimonial */
+.testimonial-container {
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 1rem;
 }
 
 .wrapper-testimonial {
@@ -419,85 +425,82 @@ body::after {
     margin: 0 auto;
     padding: 0 20px;
 }
+.testimonial-swiper {
+    overflow: hidden;
+    padding: 40px 0;
+}
 
-.testimonial__card {
+.testimonial-card {
     position: relative;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 80px 40px 40px;
-    border-radius: 20px;
+    background: #fff;
+    padding: 64px 0px;
+    border-radius: 40px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
-    gap: 20px;
-    margin: 30px 10px;
+    gap: 48px;
+    margin-top: 60px;
     min-height: 300px;
+    max-width: 100%;
     transition: transform 0.3s ease;
 }
 
-.testimonial__card:hover {
-    transform: translateY(-10px);
-}
 
-.customer__quotes {
+
+.customer-quotes {
     font-size: 18px;
     line-height: 1.6;
     font-weight: 400;
     max-width: 800px;
 }
 
-.customer__avatar {
-    width: 80px;
-    height: 80px;
+.customer-avatar {
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     position: absolute;
-    top: -40px;
-    object-fit: cover;
-    border: 3px solid #fff;
+    top: -50px;
+    border: 4px solid white;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.customer__info {
-    margin-top: 20px;
+.customer-name {
+    font-size: 25px;
+    line-height: 32px;
 }
 
-.customer__name {
+.customer-role {
     font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 5px;
+    opacity: .8;
 }
 
-.customer__role {
-    opacity: 0.8;
-    font-size: 14px;
-}
-
-.btn__group {
+.btn-group {
     display: flex;
-    gap: 20px;
+    gap: 1rem;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 2rem;
 }
-
-.btn__prev, .btn__next {
+.btn-prev, .btn-next {
     cursor: pointer;
-    transition: transform 0.3s;
-    background: transparent;
-    border: none;
-    color: #fff;
+    transition: opacity 0.3s ease;
 }
 
-.btn__prev:hover, .btn__next:hover {
-    transform: scale(1.1);
+.btn-prev:hover, .btn-next:hover {
+    opacity: 0.8;
 }
 
-.quote__icon i {
+.quote-icon i {
     font-size: 40px;
     opacity: 0.5;
     color: #fff;
 }
 
 /* Swiper Styles */
-.testimonial__card--group {
+.testimonial-card--group {
     padding: 20px 0;
 }
 
@@ -505,45 +508,19 @@ body::after {
     height: auto;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    header {
-        padding: 20px 30px;
-    }
-    
-    .navigation a {
-        margin-left: 20px;
-    }
-    
-    .content h1 {
-        font-size: 40px;
-    }
-    
-    .content p {
-        font-size: 18px;
-    }
-    
-    .service .wrapper-service {
-        gap: 30px;
-    }
-    
-    .testimonial__card {
-        padding: 60px 20px 30px;
-    }
-    
-    .customer__quotes {
-        font-size: 16px;
-    }
-}
 
 
-
+/* Price */
 
 .price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 1320px;
     margin: 0 auto;
     padding: 0 2rem;
     height: 100%;
+    width: 100%;
 }
 
 .grid {
@@ -555,15 +532,16 @@ body::after {
 
 .price-card {
     padding: 50px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     border-radius: 25px;
-    transition: .2s ease;
+    transition: .3s ease-out;
 }
 
 .price-card:hover {
     transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 20px rgba(0, 0, 0, .2);
 }
 
@@ -577,7 +555,7 @@ body::after {
 
 .pricing {
     font-weight: normal;
-    font-size: 96px;
+    font-size: 80px;
 }
 
 .pricing .small {
@@ -607,7 +585,7 @@ a.cta_btn {
     color: white;
     text-decoration: none;
     letter-spacing: 2px;
-    transition: background .2s ease, transform .3s ease-in-out;
+    transition: .3s ease, transform .3s ease;
 }
 
 a.cta_btn:hover {
@@ -617,7 +595,6 @@ a.cta_btn:hover {
 }
 .link {
     position: fixed;
-    background-color: #D12322;
     padding: 23px 40px;
     right: -99px;
     border-radius: 5px;
@@ -629,7 +606,7 @@ a.cta_btn:hover {
     color: #FFF;
     text-decoration: none;
     text-transform: capitalize;
-    transition: all .1s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 .link i {
@@ -640,6 +617,218 @@ a.cta_btn:hover {
     text-decoration: underline;
     background-color: black;
 }
+/* FAQ */
+.faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+    margin: 50px 0;
+    text-align: center;
+}
+
+.faq .heading {
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.faq-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.faq .item {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 0;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq .item.active {
+    background-color: #ffffff;
+}
+
+.faq .item .question {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq .item .question .text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #162938;
+}
+
+.faq .item.active .question .text {
+    font-weight: 600;
+}
+
+.faq .item .answer {
+    padding: 0 20px;
+    max-height: 0;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    color: #555;
+    line-height: 1.6;
+}
+
+.faq .item.active .answer {
+    max-height: 300px;
+    padding: 0 20px 20px;
+}
+/* Contacts */
+
+.contacts {
+    background: rgba(255, 255, 255, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.map {
+    width: 50%;
+}
+
+.title {
+    padding: 20px 20px 20px 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 48px;
+    font-weight: 500;
+    color:#fff;
+}
+
+.phone,.address,.internet,.time {
+    padding: 20px 20px 0px 30px;
+    color:#fff;
+}
+/* Footer */
+
+.footer {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 3.5rem;
+    background: rgba(0, 0, 0, .2);
+    padding: 80px 13% 70px;
+    position: relative;
+}
+
+.footer-content h4 {
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    font-size: 20px;
+}
+
+.footer-nav{
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    transition: all 0.4s ease;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+    margin-left: 60px;
+}
+
+.footer-nav::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform 0.4s;
+}
+
+.footer-content a:hover::after {
+    transform: scaleX(1);
+}
+
+.footer-content a:hover {
+    color: #fff;
+}
+.footer-content p {
+    color: #d6d6d6;
+    font-size: 36px;
+    line-height: 30px;
+    margin: 20px 0;
+}
+
+.icons a {
+    display: inline-block;
+    font-size: 22px;
+    color: #d6d6d6;
+    margin-right: 17px;
+    transition: all 0.4s ease;
+}
+
+.icons a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 30px;
+    }
+    
+    .navigation a {
+        margin-left: 20px;
+    }
+    
+    .content h1 {
+        font-size: 40px;
+    }
+    
+    .content p {
+        font-size: 18px;
+    }
+    
+    .service .wrapper-service {
+        gap: 30px;
+    }
+}
+
+@media (max-width:1690px) {
+    section{
+        padding: 50px 5% 40px;
+
+    }
+}
+
+@media (max-width:1120px) {
+    footer{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+        gap: 2rem;
+    }
+}
+
+@media (max-width:700px) {
+    footer{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+        gap: 2.5rem;
+    }
+}
+
+
 @media only screen and (max-width: 1024px) {
     .grid {
         grid-template-columns: 1fr 1fr;
