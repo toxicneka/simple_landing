@@ -403,7 +403,6 @@ body::after {
     border: 2px solid #162938;
     outline: none;
     border-radius: 6px;
-    font-weight: 500;
     text-decoration: none;
     transition: 0.4s;
 }
@@ -783,7 +782,148 @@ a.cta_btn:hover {
 }
 
 /* Responsive Styles */
+
+/* 1024px */
+@media (max-width: 1024px) {
+    header {
+        padding: 20px 50px;
+    }
+
+    .content h1 {
+        font-size: 50px;
+    }
+
+    .service .wrapper-service {
+        gap: 50px;
+    }
+
+    .testimonial-card {
+        padding: 50px 20px;
+    }
+
+    .price .grid {
+        gap: 2rem;
+        padding: 8% 0;
+    }
+}
+
+/* 768px */
 @media (max-width: 768px) {
+    header {
+        padding: 20px 30px;
+    }
+
+    .navigation a:not(.btnLogin-popup) {
+        display: none;
+    }
+
+    .content h1 {
+        font-size: 40px;
+    }
+
+    .content p {
+        font-size: 18px;
+    }
+
+    .service .wrapper-service {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .testimonial-card {
+        margin-top: 40px;
+        padding: 40px 15px;
+    }
+
+    .price .grid {
+        grid-template-columns: 1fr;
+        padding: 12% 5%;
+    }
+
+    .contacts {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .map {
+        width: 100%;
+        height: 300px;
+    }
+
+    .map iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* 480px */
+@media (max-width: 480px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 1.5em;
+    }
+
+    .btnLogin-popup {
+        width: 80px;
+        height: 40px;
+        font-size: 0.9em;
+        margin-left: 15px;
+    }
+
+    .content h1 {
+        font-size: 30px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+    .testimonial-card {
+        padding: 60px 10px 30px;
+    }
+
+    .customer-quotes {
+        font-size: 16px;
+    }
+
+    .price-card {
+        padding: 30px;
+    }
+
+    .card_title {
+        font-size: 28px;
+    }
+
+    .pricing {
+        font-size: 60px;
+    }
+
+    .faq .question .text {
+        font-size: 16px;
+    }
+
+    .detail .title {
+        font-size: 36px;
+        padding: 15px;
+    }
+
+    .footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .footer-nav {
+        margin-left: 0;
+        justify-content: center;
+    }
+}
+
+
+/* @media (max-width: 768px) {
     header {
         padding: 20px 30px;
     }
@@ -836,8 +976,9 @@ a.cta_btn:hover {
 
     }
 }
+ */
 
-@media only screen and (max-width: 425px) {
+ @media only screen and (max-width: 425px) {
     .grid {
         grid-template-columns: 1fr;
         gap: 2%;
@@ -871,5 +1012,43 @@ a.cta_btn:hover {
 
     a.cta_btn {
         font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .service .wrapper-service {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .wrapper-service .box {
+        position: relative;
+        padding-bottom: 100px; /* Место для кнопки */
+        min-height: auto;
+        height: auto;
+    }
+
+    .wrapper-service .box p {
+        display: none;
+    }
+
+    .box .btn {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 500px;
+        margin: 0;
+        padding: 10px;
+    }
+
+    /* Оптимизация других элементов */
+    .box i {
+        font-size: 40px;
+    }
+
+    .box h2 {
+        font-size: 20px;
+        margin: 10px 0;
     }
 }
